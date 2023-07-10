@@ -246,6 +246,39 @@
           <button class="ui teal right button" id="pay-gas">
             Was Here
           </button>
+
+          <!-- HTML code for the modal-->
+          <div id="secretCodeModal" class="modal">
+              <!--Content for the Secret Code in the Modal-->
+              <div class="modal-code">
+                <span class="close">&times;</span>
+                <p>
+                  Your Secret Code is:
+
+                  If you want chance to win an exculsive hoodie and join our builder community, enter the VueSchool competition here:  
+                </p>
+              </div>
+          </div>
+
+          <div class="modal-wrapper" id="modal">
+            <div class="modal-body card">
+              <div class="modal-header">
+                <h2 class="heading">Your Secret Code!</h2>
+                <a href="#!" role="button" class="close" aria-label="close this modal">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M24 20.188l-8.315-8.209 8.2-8.282-3.697-3.697-8.212 8.318-8.31-8.203-3.666 3.666 8.321 8.24-8.206 8.313 3.666 3.666 8.237-8.318 8.285 8.203z" />
+                  </svg>
+                </a>
+              </div>
+              <p>
+                Here is your secret code for the VueSchool Competition <code>Gas_Stations_Rocks!</code>
+
+                If you want chance to win an exculsive hoodie and join our builder community, enter the VueSchool competition here:
+              </p>
+            </div>
+            <a href="#!" class="outside-trigger"></a>
+          </div>
+
         </div>
         <div class="ui message hidden" id="requestKey">
           <div id="header-text" class="header"></div>
@@ -264,6 +297,85 @@
   </div>
 </body>
 <style>
+
+/*Modal CSS Style STARTS*/
+
+$opacity-transition: opacity;
+
+$speed ease-in-out;
+
+
+.modal-header {
+	align-items: baseline;
+	display: flex;
+	justify-content: space-between;
+}
+
+.close {
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: flex;
+	height: 16px;
+	text-decoration: none;
+	width: 16px;
+
+	svg {
+		width: 16px;
+	}
+}
+
+.modal-wrapper {
+	align-items: center;
+	background: rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	display: flex;
+	justify-content: center;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+#modal {
+	opacity: 0;
+	transition: $opacity-transition;
+	visibility: hidden;
+
+	&:target {
+		opacity: 1;
+		visibility: visible;
+
+		.modal-body {
+			opacity: 1;
+			transform: translateY(1);
+		}
+	}
+
+	.modal-body {
+		max-width: 500px;
+		opacity: 0;
+		transform: translateY(-100px);
+		transition: $opacity-transition;
+		width: 100%;
+		z-index: 1;
+	}
+}
+
+.outside-trigger {
+	bottom: 0;
+	cursor: default;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+.button__link {
+	text-decoration: none;
+}
+
+/*Modal CSS Style ENDS*/
 
 #container{
   margin-top: 50px;
